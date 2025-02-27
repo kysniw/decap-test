@@ -1,33 +1,13 @@
-import TestImage from "@/components/test-image";
-import { getFolderMarkups, getMarkup } from "@/libs/utils";
+import bgImage from '@/work-dir/bg-image.jpg'
 // import Script from "next/script";
 
-export default function Home() {
-  const hero = getMarkup("content/homepage", "hero.md");
-  if (!hero) {
-    return (
-      <main>
-        <p>Sorry! There is problem with loading data.</p>
-      </main>
-    );
-  }
+import Image from "next/image"
 
-  const { data } = hero;
-  const markups = getFolderMarkups("content/homepage");
-  console.log(markups);
+export default function Home() {
   return (
-    <>
-      {/* Enables registering from this page */}
-      {/* <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" /> */}
-      <main>
-        <div className="mt-10 flex flex-col items-center">
-          <h1 className="text-2xl">{data.title}</h1>
-          <p className="text-lg">{data.subtitle}</p>
-          <button>{data.buttonText}</button>
-          <input type="text" inputMode='numeric' className="border border-black rounded-md" />
-        </div>
-        <TestImage />
-      </main>
-    </>
-  );
+    <section className="relative z-0 h-screen flex justify-center items-center bg-slate-500">
+      <Image className='-z-10 absolute inset-0 w-full h-full object-cover' src={bgImage} alt="bg image" width={600} height={600} />
+      <h1>Witaj!</h1>
+    </section>
+  )
 }

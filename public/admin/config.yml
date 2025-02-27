@@ -10,13 +10,12 @@ media_folder: "public/media"
 public_folder: "public/media"
 
 collections:
-  - label: "Home page"
-    name: "homepage"
+  - label: "Podstrony"
+    name: "pages"
     files:
-      - label: "Hero"
-        name: "hero"
-        file: "content/homepage/{{slug}}.md"
-        create: true
+      - label: "Strona główna"
+        name: "home"
+        file: "content/pages/homepage.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
